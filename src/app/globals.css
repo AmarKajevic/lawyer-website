@@ -1,4 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
 @import "tailwindcss";
+
+@layer components{
+  .btn{
+    @apply
+    border
+    bg-black
+     border-white 
+     rounded-md
+      text-white 
+      px-4 
+      py-2 
+      uppercase 
+      font-bold
+       hover:bg-white
+     hover:text-black transition
+  }
+}
+@layer utilities {
+  .fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+.text{
+  @apply px-6 py-8 bg-gradient-to-r from-[#FDFCFB] to-[#E2D1C3] shadow-xl rounded-2xl border border-gray-200
+}
+.nature-law {
+  @apply px-6 py-8 shadow-md rounded-lg border border-gray-200
+}
+.nature-law:hover {
+  @apply scale-105 shadow-lg ;
+}
+.guilty-law {
+  @apply bg-white/10  border border-white rounded-xl p-8 shadow-xl max-w-3xl
+}
+.lawyer-column, .lawyer-column-second, .lawyer-column-third, .lawyer-column-fourth, .lawyer-column-fifth, .lawyer-column-sixth{
+  @apply bg-white/10 border border-white rounded-xl p-2 shadow-xl max-w-2xl text-black 
+}
+.image{
+  @apply w-2xl
+}
+.hover-card{
+  @apply max-w-3xl h-[420px] shadow-2xl rounded-2xl px-5 py-5 
+}
+.yoast-text{
+  @apply text-black bg-amber-500
+}
+.criminal-columns {
+  @apply bg-white/70 rounded-xl shadow-2xl p-6 text-left;
+  width: 100%;
+  max-width: 600px; /* Sve kolone iste širine */
+  flex: 1 1 0;
+}
+
+
+
+
+@theme {
+  --font-primary: "Oswald", "sans-serif"; 
+  --font-secondary: "Roboto", sans-serif;
+  --font-heading: "Aboreto", "system-ui";
+  --font-body: "Comic Relief", system-ui;
+}
 
 :root {
   --background: #ffffff;

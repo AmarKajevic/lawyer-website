@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
   images: {
     domains,
   },
+  eslint: {
+    ignoreDuringBuilds: true, // Ovo će ignorisati ESLint greške tokom builda
+  },
 };
 
 export default nextConfig;

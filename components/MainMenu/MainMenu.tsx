@@ -36,7 +36,7 @@ const MainMenu = ({
                 {/* Mega Menu Dropdown */}
               {item.subMenuItems && item.subMenuItems.length > 0 && (
                     <div
-                      className="absolute left-0 top-5 mt-2 w-screen max-w-7xl bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 
+                      className="absolute  left-0 top-5 mt-2 w-screen max-w-6xl bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 
                       pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-10"
                       style={{ minWidth: "800px" }}
                     >

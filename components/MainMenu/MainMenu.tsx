@@ -58,7 +58,7 @@ const MainMenu = ({
                                   </h3>
                                   <ul className="space-y-1 text-gray-700">
                                     {sub.subItems &&
-                                      sub.subItems.map((subsub) => (
+                                      sub.subItems.map((subsub: any) => (
                                         <li key={subsub.id}>
                                           <a
                                             href={subsub.destination || "#"}

@@ -40,7 +40,7 @@ export type CoverProps ={
 }
 export type HeadingProps ={
   textAlign?: "left" | "center" | "right";
-  level: 1 | 2 | 3 | 4 | 5 | 6;
+  level: 1 | 2 | 3 | 4 | 5 ;
   children: ReactNode;
   textColor?: string;
   className?: string;

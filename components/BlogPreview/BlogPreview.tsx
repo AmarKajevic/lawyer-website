@@ -1,8 +1,6 @@
 // components/BlogPreview.tsx
 import { gql } from "@apollo/client";
-
 import Image from "next/image";
-import Link from "next/link";
 import client from "../../client";
 
 function stripHtml(html: string): string {
@@ -27,10 +25,21 @@ const GET_LATEST_POSTS = gql`
     }
   }
 `;
+type Post = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+    };
+  } | null;
+};
 
 export default async function BlogPreview() {
   const { data } = await client.query({ query: GET_LATEST_POSTS });
-  const posts = data?.posts?.nodes || [];
+  const posts: Post[]  = data?.posts?.nodes || [];
 
    return (
     <div className="col-span-1">

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+
 import { MainMenuProps } from "@/types/blocks";
 import BlogPreview from "../BlogPreview/BlogPreview";
 
@@ -10,14 +10,14 @@ const MainMenu = ({
   callToActionDestination,
 }: MainMenuProps) => {
   return (
-    <nav className="bg-white/70  shadow sticky top-0  z-50">
+    <nav className="bg-white/70  shadow sticky top-0  z-10">
       <div className="max-w-8xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between  h-12 items-center">
           {/* Desktop Menu */}
           <ul className="hidden lg:flex space-x-8 ">
             {items.map((item) => (
               <li key={item.id} className="relative group">
-                <Link
+                <a
                   href={item.destination || "#"}
                   className="inline-flex items-center px-3 py-2 text-gray-800 hover:text-black font-semibold"
                 >
@@ -31,13 +31,13 @@ const MainMenu = ({
                       <path d="M5.516 7.548l4.484 4.484 4.484-4.484L15 9l-5 5-5-5z" />
                     </svg>
                   )}
-                </Link>
+                </a>
 
                 {/* Mega Menu Dropdown */}
               {item.subMenuItems && item.subMenuItems.length > 0 && (
                     <div
                       className="absolute left-0 top-5 mt-2 w-screen max-w-7xl bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 
-                      pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-50"
+                      pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-10"
                       style={{ minWidth: "800px" }}
                     >
                       <div className="px-8 py-6 grid grid-cols-4 gap-8">
@@ -54,18 +54,18 @@ const MainMenu = ({
                               {col.map((sub) => (
                                 <div key={sub.id} className="space-y-2">
                                   <h3 className="text-lg font-semibold text-gray-900">
-                                    <Link href={sub.destination || "#"}>{sub.label}</Link>
+                                    <a href={sub.destination || "#"}>{sub.label}</a>
                                   </h3>
                                   <ul className="space-y-1 text-gray-700">
                                     {sub.subItems &&
                                       sub.subItems.map((subsub) => (
                                         <li key={subsub.id}>
-                                          <Link
+                                          <a
                                             href={subsub.destination || "#"}
                                             className="block hover:text-black hover:underline"
                                           >
                                             {subsub.label}
-                                          </Link>
+                                          </a>
                                         </li>
                                       ))}
                                   </ul>
@@ -87,13 +87,13 @@ const MainMenu = ({
           </ul>
 
           {/* CTA button */}
-          <div className="hidden lg:inline-block">
+          {/* <div className="hidden lg:inline-block">
             <Link href={callToActionDestination}>
               <button className="bg-black text-white px-6 py-2 rounded-md font-semibold hover:bg-gray-900 transition">
                 {callToActionLabel}
               </button>
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile menu toggle (checkbox) */}
           <div className="lg:hidden">
@@ -132,7 +132,7 @@ const MainMenu = ({
 
             {/* Fullscreen Mobile Menu */}
             <div
-              className="fixed inset-0 bg-white z-50 transform scale-0 peer-checked:scale-100 transition-transform origin-top-right
+              className="fixed inset-0 bg-white scale z-[999] top-23 transform scale-0 peer-checked:scale-100 transition-transform origin-top-right
               overflow-y-auto"
               aria-modal="true"
               role="dialog"
@@ -141,7 +141,7 @@ const MainMenu = ({
               {/* Close button top right */}
               <label
                 htmlFor="mobile-menu-toggle"
-                className="absolute top-4 right-4 p-2 cursor-pointer text-black hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
+                className="absolute top-4 right-4 p-2 z-100 cursor-pointer text-black hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
                 aria-label="Close menu"
               >
                 <svg
@@ -191,7 +191,7 @@ const MainMenu = ({
 
                                   {/* Strelica */}
                                   <svg
-                                    className="w-4 h-4 ml-2 transition-transform duration-300 group-open:rotate-180"
+                                    className="w-10 h-10 ml-2 transition-transform duration-300 group-open:rotate-180"
                                     fill="currentColor"
                                     viewBox="0 0 30 30"
                                   >

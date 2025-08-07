@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Search from "../Search/Search";
+import { Phone, Mail } from "lucide-react"; // Uvoz ikona
 
 const LogoMenu = () => {
   return (
@@ -16,18 +17,31 @@ const LogoMenu = () => {
               height={100}
               className="w-18 p-2 sm:w-20 md:w-20 lg:w-28 h-auto"
               priority
+              loading="eager"
             />
           </Link>
         </div>
-        <div className="w-full max-w-5xl">
+        <div className="w-full max-w-6xl z-50">
           <Search />
         </div>
       </div>
 
       {/* Donji red: telefon + email */}
-      <div className="hidden md:flex flex-row sm:flex-row sm:justify-between sm:items-center text-white text-sm w-full gap-2 sm:gap-4 lg:w-auto lg:flex-row lg:gap-6">
-        <div>+381644208963</div>
-        <div>advokatmilovanovic@gmail.com</div>
+      <div className="hidden md:flex flex-row text-white text-sm w-full gap-6 lg:w-auto lg:flex-row lg:gap-6 items-center">
+        <a
+          href="tel:+381644208963"
+          title="+381 64 420 8963"
+          className="flex items-center gap-2 transition-colors hover:text-yellow-400"
+        >
+          <Phone className="w-8 h-8" />
+        </a>
+        <a
+          href="mailto:advokatmilovanovic@gmail.com"
+          title="advokatmilovanovic@gmail.com"
+          className="flex items-center gap-2 transition-colors hover:text-yellow-400"
+        >
+          <Mail className="w-8 h-8" />
+        </a>
       </div>
     </div>
   );

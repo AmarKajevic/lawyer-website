@@ -31,12 +31,12 @@ export default function Breadcrumb() {
         {isLast ? (
           <span className="text-white capitalize">{label}</span>
         ) : (
-          <Link
+          <a
             href={href}
             className="text-white hover:underline capitalize transition"
           >
             {label}
-          </Link>
+          </a>
         )}
       </div>
     );

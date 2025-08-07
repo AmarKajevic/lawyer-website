@@ -1,14 +1,14 @@
 import { ButtonProps } from "@/types/blocks";
-import Link from "next/link"
+
 
 
 
 
   const ButtonLink  = ({destination, label}: ButtonProps)=> {
-    return <Link
+    return <a
     href={destination}
     className="btn">
     {label}
-  </Link>
+  </a>
 }
 export default ButtonLink;

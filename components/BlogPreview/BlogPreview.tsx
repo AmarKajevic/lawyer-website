@@ -52,12 +52,12 @@ export default async function BlogPreview() {
             <p className="text-xs text-gray-600">
               {stripHtml(post.excerpt).slice(0, 40)}...
             </p>
-            <Link
+            <a
               href={`/blog/${post.slug}`}
               className="text-gray-600 hover:underline text-sm"
             >
               Pročitaj više →
-            </Link>
+            </a>
           </div>
         ))}
       </div>

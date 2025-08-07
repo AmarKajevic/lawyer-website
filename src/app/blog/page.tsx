@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client"
 import client from "../../../client"
 import Image from "next/image";
-import Link from "next/link";
-import Breadcrumb from "../../../components/Breadcrumb/Breadcrumb";
+
+
 
 function stripHtml(html: string): string {
   if (!html) return "";
@@ -87,12 +87,12 @@ export default async function BlogPage() {
             <p className="text-gray-600 mt-2 text-sm">
               {stripHtml(post.excerpt).slice(0, 150)}...
             </p>
-            <Link
+            <a
               href={`/blog/${post.slug}`}
               className="text-gray-600 hover:underline mt-4 block"
             >
               Pročitaj više →
-            </Link>
+            </a>
           </div>
         ))}
       </div>

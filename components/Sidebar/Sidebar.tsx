@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import Link from "next/link";
+
 import client from "../../client";
 import Image from "next/image";
 
@@ -51,12 +51,12 @@ export default async function Sidebar() {
               )}
 
               <div className="flex flex-col">
-                <Link
+                <a
                   href={`/blog/${post.slug}`}
                   className="text-black hover:underline text-sm font-medium"
                 >
                   {post.title}
-                </Link>
+                </a>
                 <p className="text-gray-500 text-xs">{new Date(post.date).toLocaleDateString()}</p>
               </div>
             </li>

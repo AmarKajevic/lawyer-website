@@ -28,7 +28,7 @@ export default async function RootLayout({
         
         <div>
         <LogoMenu/>
-        <div className="sticky top-0 z-50 ">
+        <div className="sticky top-0 z-40">
           <MainMenu
             items={menuItems}
             callToActionLabel={callToActionLabel}

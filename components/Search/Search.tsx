@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+
 
 const getCleanSlug = (url: string) => {
   try {
@@ -63,7 +63,7 @@ const Search = () => {
 
   return (
     <div
-      className="max-w-4xl w-full relative py-4 px-4 sm:px-6 md:px-8 z-100"
+      className="max-w-4xl w-full relative py-4 px-4 sm:px-6 md:px-8 "
       ref={dropdownRef}
     >
       <input
@@ -81,13 +81,13 @@ const Search = () => {
             const slug = getCleanSlug(item.url);
             return (
               <li key={item.id}>
-                <Link
+                <a
                   href={`/${slug}`}
                   className="block p-2 hover:bg-gray-100 text-sm"
                   onClick={() => setShowDropdown(false)}
                 >
                   {item.title}
-                </Link>
+                </a>
               </li>
             );
           })}

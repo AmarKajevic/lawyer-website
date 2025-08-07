@@ -31,7 +31,7 @@ export default async function Sidebar() {
      <aside className="hidden lg:block w-[300px] sticky mt-5 top-10 mb-5 h-fit p-4 bg-white-400 rounded-md shadow-xl">
       <h2 className="text-lg font-bold mb-4">Najnoviji blogovi</h2>
       <ul className="space-y-4">
-          {posts.map((post) => (
+          {posts.map((post: any) => (
             <li
               key={post.id}
               className="border-b border-gray-400 pb-2 flex gap-3"

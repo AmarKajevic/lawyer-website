@@ -8,7 +8,6 @@ import CallToActionButton from '../CallToActionButton/CallToActionButton';
 import Columns from '../Columns/Columns';
 import Column from '../Column/Column';
 import Image from 'next/image';
-import { PropertySearch } from '../PropertySearch/PropertySearch';
 import FormspreeForm from '../FormspreeForm/FormspreeForm';
 import Group from '../Group/Group';
 import GoogleMapEmbed from '../GoogleMapEmbed/GoogleMapEmbed';
@@ -102,9 +101,7 @@ export const BlockRenderer: React.FC<BlockRendererProps> = ({ blocks, className 
               </Heading>
             );
           }
-          case 'acf/propertysearch':{
-            return <PropertySearch key={block.id}/>
-          }
+
         
 
 

@@ -36,7 +36,7 @@ interface GroupProps {
   
     return (
       <div
-        className={`group relative p-2 overflow-hidden   transition-all duration-300 ${className}`}
+        className={`group relative p-2 overflow-hidden ${className}`}
         style={backgroundStyle}
       >
         {children}

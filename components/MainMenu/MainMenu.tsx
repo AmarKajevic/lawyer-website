@@ -180,24 +180,25 @@ const MainMenu = ({
                           <li key={sub.id}>
                             {sub.subItems && sub.subItems.length > 0 ? (
                               <details className="group">
-                                <summary className="flex justify-between items-center cursor-pointer text-gray-700 px-2 py-1 hover:text-gray-900">
-                                  {/* Link unutar summary – klikom ideš na podkategoriju */}
-                                  <a
-                                    href={sub.destination || "#"}
-                                    className="hover:underline"
-                                  >
-                                    {sub.label}
-                                  </a>
+                                <summary className="flex items-center cursor-pointer text-gray-700 px-2 py-1 hover:text-gray-900">
+                                {/* Strelica sa leve strane */}
+                                <svg
+                                  className="w-5 h-5 mr-2 transition-transform duration-300 group-open:rotate-180"
+                                  fill="currentColor"
+                                  viewBox="0 0 30 30"
+                                >
+                                  <path d="M5.5 7.5l4.5 4.5 4.5-4.5" />
+                                </svg>
 
-                                  {/* Strelica */}
-                                  <svg
-                                    className="w-10 h-10 ml-2 transition-transform duration-300 group-open:rotate-180"
-                                    fill="currentColor"
-                                    viewBox="0 0 30 30"
-                                  >
-                                    <path d="M5.5 7.5l4.5 4.5 4.5-4.5" />
-                                  </svg>
-                                </summary>
+                                {/* Tekst linka */}
+                                <a
+                                  href={sub.destination || "#"}
+                                  className="hover:underline"
+                                >
+                                  {sub.label}
+                                </a>
+                              </summary>
+
 
                                 {/* Treći nivo – prikazuje se ispod kada se otvori */}
                                 <ul className="pl-4 mt-1 border-l border-gray-200 space-y-1">

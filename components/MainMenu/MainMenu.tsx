@@ -180,7 +180,7 @@ const MainMenu = ({
                           <li key={sub.id}>
                             {sub.subItems && sub.subItems.length > 0 ? (
                               <details className="group">
-                                <summary className="flex mx-3 items-center cursor-pointer text-gray-700 px-2 py-1 hover:text-gray-900">
+                                <summary className="flex  items-center ">
                                   {/* Link unutar summary – klikom ideš na podkategoriju */}
                                   <a
                                     href={sub.destination || "#"}
@@ -190,13 +190,13 @@ const MainMenu = ({
                                   </a>
 
                                   {/* Strelica */}
-                                  {/* <svg
+                                  <svg
                                     className="w-10 h-10 ml-2 transition-transform duration-300 group-open:rotate-180"
                                     fill="currentColor"
                                     viewBox="0 0 30 30"
                                   >
                                     <path d="M5.5 7.5l4.5 4.5 4.5-4.5" />
-                                  </svg> */}
+                                  </svg>
                                 </summary>
 
                                 {/* Treći nivo – prikazuje se ispod kada se otvori */}

@@ -55,6 +55,8 @@ export default async function BlogPreview() {
                 width={300}
                 height={160}
                 className="w-full h-24 object-cover rounded"
+                priority
+                loading="eager"
               />
             )}
             <h4 className="text-sm font-semibold">{post.title}</h4>

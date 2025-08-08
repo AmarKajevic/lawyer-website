@@ -68,6 +68,9 @@
   max-width: 600px; /* Sve kolone iste širine */
   flex: 1 1 0;
 }
+.columns-white{
+  @apply text-black
+}
 
 
 

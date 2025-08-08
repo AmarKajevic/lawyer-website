@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
-const domains = [];
+const domains = [
+  "wp.advokatizabeograd.rs",   // domen gde stoje WP slike
+  "advokatizabeograd.rs",      // glavni domen sajta
+];
 
-if (process.env.WP_IMAGES_URL) {
+// Ako želiš, dodaj i iz env promenljive ako postoji i nije već u listi
+if (process.env.WP_IMAGES_URL && !domains.includes(process.env.WP_IMAGES_URL)) {
   domains.push(process.env.WP_IMAGES_URL);
 }
 
@@ -11,7 +15,7 @@ const nextConfig: NextConfig = {
     domains,
   },
   eslint: {
-    ignoreDuringBuilds: true, // Ovo će ignorisati ESLint greške tokom builda
+    ignoreDuringBuilds: true,
   },
 };
 

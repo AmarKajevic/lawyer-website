@@ -50,12 +50,13 @@ export default function Breadcrumb() {
     >
       {/* Slika kao apsolutni element */}
       <Image
-        src="/belgrade-pano.webp"
+        src="/Belgrade-pano.webp"
         alt="Pozadina Beograda"
         fill
         style={{ objectFit: 'cover', objectPosition: 'center' }}
         priority
         className="-z-10"
+        loading='eager'
       />
 
       {/* Poluprozirni overlay */}

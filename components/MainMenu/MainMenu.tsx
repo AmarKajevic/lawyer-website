@@ -10,7 +10,7 @@ const MainMenu = ({
   callToActionDestination,
 }: MainMenuProps) => {
   return (
-    <nav className="bg-white/70  shadow sticky top-0  z-10">
+    <nav className="bg-white  shadow sticky top-0  z-10">
       <div className="max-w-8xl  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between  h-12 items-center">
           {/* Desktop Menu */}
@@ -37,7 +37,7 @@ const MainMenu = ({
               {item.subMenuItems && item.subMenuItems.length > 0 && (
                     <div
                       className="absolute  left-0 top-5 mt-2 w-screen max-w-6xl bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 
-                      pointer-events-none group-hover:opacity-90 group-hover:pointer-events-auto transition-opacity duration-300 z-10"
+                      pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300 z-10"
                       style={{ minWidth: "800px" }}
                     >
                       <div className="px-8 py-6 grid grid-cols-4 gap-8">

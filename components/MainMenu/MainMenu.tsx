@@ -182,13 +182,13 @@ const MainMenu = ({
                               <details className="group">
                                 <summary className="flex items-center cursor-pointer text-gray-700 px-2 py-1 hover:text-gray-900">
                                 {/* Strelica sa leve strane */}
-                                <svg
+                                {/* <svg
                                   className="w-5 h-5 mr-2 transition-transform duration-300 group-open:rotate-180"
                                   fill="currentColor"
                                   viewBox="0 0 30 30"
                                 >
                                   <path d="M5.5 7.5l4.5 4.5 4.5-4.5" />
-                                </svg>
+                                </svg> */}
 
                                 {/* Tekst linka */}
                                 <a

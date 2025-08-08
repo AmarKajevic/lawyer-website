@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Breadcrumb() {
   const pathname = usePathname();
@@ -44,27 +45,34 @@ export default function Breadcrumb() {
 
   return (
     <nav
-  className="relative flex items-center gap-2 px-4 py-2 h-[120px] sm:h-[200px] bg-[url('/belgrade-pano.webp')] bg-cover bg-center"
-  aria-label="Breadcrumb"
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/70 bg-opacity-60 z-0" />
-
-  {/* Breadcrumb content */}
-  <div className="relative z-10 flex items-center gap-2 text-white">
-    {/* Tvoj Link za početnu i breadcrumb elementi */}
-    <Link
-      href="/"
-      className="flex items-center text-white hover:underline gap-1"
+      className="relative flex items-center gap-2 px-4 py-2 h-[120px] sm:h-[200px] overflow-hidden"
+      aria-label="Breadcrumb"
     >
-      <Home className="w-4 h-4" />
-      <span className="hidden sm:inline">Početna</span>
-    </Link>
+      {/* Slika kao apsolutni element */}
+      <Image
+        src="/belgrade-pano.webp"
+        alt="Pozadina Beograda"
+        fill
+        style={{ objectFit: 'cover', objectPosition: 'center' }}
+        priority
+        className="-z-10"
+      />
 
-    {/* Ostatak breadcrumbs */}
-    {breadcrumbs}
-  </div>
-</nav>
+      {/* Poluprozirni overlay */}
+      <div className="absolute inset-0 bg-black/70 z-0" />
 
+      {/* Breadcrumb sadržaj sa relativnim pozicioniranjem i višim z-index-om */}
+      <div className="relative z-10 flex items-center gap-2 text-white">
+        <Link
+          href="/"
+          className="flex items-center text-white hover:underline gap-1"
+        >
+          <Home className="w-4 h-4" />
+          <span className="hidden sm:inline">Početna</span>
+        </Link>
+
+        {breadcrumbs}
+      </div>
+    </nav>
   );
 }
